@@ -126,23 +126,18 @@ const Cemetery = () => {
                 </Grid>
               </Box>
               <div hidden={activeBanks.filter((bank) => bank.sectionInUI === 0).length === 0}>
-                <Typography color="textPrimary" variant="h4" gutterBottom style={{ marginTop: '35px', marginBottom: '30px' }}>
-                  Bondable Assets
-                </Typography>
-                <Box mb={3} style={{ width: '1000px' }}>
-                  <Alert variant="filled" severity="warning">
-                    This page is under active maintenance. We have set the bond Rate to 0. This means you can send money but will get nothing in return!!!
-                  </Alert>
-                </Box>
-                <Grid container spacing={3}>
-                  {activeBanks
-                    .filter((bank) => bank.sectionInUI === 3)
-                    .map((bank) => (
-                      <React.Fragment key={bank.name}>
-                        <CemeteryCard bank={bank} />
-                      </React.Fragment>
-                    ))}
-                </Grid>
+                  <Typography color="textPrimary" variant="h4" gutterBottom style={{ marginTop: '35px', marginBottom: '30px' }}>
+                    Bondable Assets
+                  </Typography>
+                  <Grid container spacing={3}>
+                    {activeBanks
+                      .filter((bank) => bank.sectionInUI === 3)
+                      .map((bank) => (
+                        <React.Fragment key={bank.name}>
+                          <CemeteryCard bank={bank} />
+                        </React.Fragment>
+                      ))}
+                  </Grid>
               </div>
               <Box mt={2}>
                 <Grid container justify="center" spacing={3}>
