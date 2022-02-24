@@ -6,6 +6,7 @@ import { useWallet } from 'use-wallet';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { Box, Button, Card, CardContent, Typography, Grid } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
 
 import PageHeader from '../../components/PageHeader';
 import Spacer from '../../components/Spacer';
@@ -72,6 +73,10 @@ const Bank: React.FC = () => {
       </Box>
       <Box mt={5}>
         <StyledBank>
+      {(bank.depositTokenName.includes('3OMB-TOMB') || bank.depositTokenName.includes('2OMB-TOMB')) &&
+      <Alert variant="filled" severity="warning">
+        Rewards for this pool are currently turned off.
+      </Alert>}
           <StyledCardsWrapper>
             <StyledCardWrapper>
               <Harvest bank={bank} />
