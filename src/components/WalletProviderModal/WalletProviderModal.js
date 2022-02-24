@@ -5,6 +5,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import metamaskLogo from '../../assets/img/metamask-fox.svg';
 import walletConnectLogo from '../../assets/img/wallet-connect.svg';
 import coingBaseLogo from '../../assets/img/coinbase_logo.jpeg';
+import coin98Logo from '../../assets/img/coin98.png';
+import mathWalletLogo from '../../assets/img/mathWallet.png';
+import rabbyWalletLogo from '../../assets/img/rabby.png';
 import { useWallet } from 'use-wallet';
 
 const useStyles = makeStyles((theme) => ({
@@ -58,13 +61,34 @@ const WalletProviderModal = ({ open, handleClose }) => {
 						}}
 						title="WalletConnect"
 					/>
-					{/* <WalletCard
-            icon={<img src={coingBaseLogo} alt="Coinbase wallet logo" style={{ height: 32 }} />}
-            onConnect={() => {
-              connect('walletlink');
-            }}
-            title="Coinbase Wallet"
-          /> */}
+					<WalletCard
+						icon={<img src={coingBaseLogo} alt="Coinbase wallet logo" style={{ height: 32 }} />}
+						onConnect={() => {
+							connect('walletlink');
+						}}
+						title="Coinbase Wallet"
+					/>
+					<WalletCard
+						icon={<img src={coin98Logo} alt="Coin98 logo" style={{ height: 32, borderRadius: 8 }} />}
+						onConnect={() => {
+							connect('injected');
+						}}
+						title="Coin98 Wallet"
+					/>
+					<WalletCard
+						icon={<img src={mathWalletLogo} alt="Math logo" style={{ height: 32, borderRadius: 8 }} />}
+						onConnect={() => {
+							connect('injected');
+						}}
+						title="Math Wallet"
+					/>
+					<WalletCard
+						icon={<img src={rabbyWalletLogo} alt="Rabby logo" style={{ height: 32, borderRadius: 8 }} />}
+						onConnect={() => {
+							connect('injected');
+						}}
+						title="Rabby Wallet"
+					/>
 				</List>
 			</div>
 		</Modal>
